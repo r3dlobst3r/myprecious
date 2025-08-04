@@ -11196,7 +11196,7 @@ wizarr:
   enabled: false
   image:
     repository: ghcr.io/elfhosted/wizarr
-    tag: 2025.7.8@sha256:9d878ead1ee61eb1607081c1f421d74bd70deecb0aebcc685b8daa543b0aac44
+    tag: 2025.8.1@sha256:b51b33db465c3a4a0c480c0bc747d1012564dceb41aefb9185347c2181c6cd2a
   priorityClassName: tenant-normal
   podLabels:
       app.elfhosted.com/name: wizarr  
