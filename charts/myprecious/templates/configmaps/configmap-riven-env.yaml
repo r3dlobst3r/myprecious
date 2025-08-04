@@ -23,7 +23,6 @@ data:
   {{ end }}
 
   RIVEN_SYMLINK_RCLONE_PATH: /storage/realdebrid-zurg/__all__
-  {{ end }}
 
   RIVEN_SYMLINK_LIBRARY_PATH: /storage/symlinks
   RIVEN_UPDATERS_PLEX_URL: http://plex:32400
