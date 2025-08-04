@@ -1,0 +1,9 @@
+{{ if .Values.rclonedebridlink.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: debridlink-env
+data:
+  DEBRID_ID: debridlink
+  DATA_FOLDER: /config
+{{ end }}

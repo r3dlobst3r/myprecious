@@ -1,10 +1,10 @@
-{{ if .Values.stremthru.enabled }}
+{{ if .Values.rclonedebridlink.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: stremthru
+  name: debridlink
   labels:
-    app.kubernetes.io/name: stremthru
+    app.kubernetes.io/name: debridlink
     app.kubernetes.io/instance: {{ .Release.Name }}
   annotations:
 spec:
@@ -15,6 +15,6 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app.kubernetes.io/name: stremthru
+    app.kubernetes.io/name: rclonedebridlink
     app.kubernetes.io/instance: {{ .Release.Name }}
 {{ end }}
