@@ -9036,7 +9036,7 @@ plexytrack:
   priorityClassName: tenant-normal
   image:
     repository: ghcr.io/elfhosted/plexytrack
-    tag: v0.3.4@sha256:906a69afe2eaedbbe79fda5f403f8d2029c83cc4d3193c44b61a106b75dc67de
+    tag: v0.3.6@sha256:71b24275f9e7001dacd4c83ed1d755e24e096558c0a145c99ba43608e0f60590
   podLabels:
       app.elfhosted.com/name: plexytrack    
   podAnnotations:
