@@ -1387,7 +1387,7 @@ tautulli:
   image:
     registry: ghcr.io
     repository: elfhosted/tautulli
-    tag: 2.15.2@sha256:214a0ef60363bf81722612732eb62830366fc2cbdbd75e39c4acca61aaae6f20
+    tag: 2.15.3@sha256:c70efeca46cbadbc42a13e5dc0aeda3999b6cf6128ba198c2d572419f9207558
   priorityClassName: tenant-normal
   podLabels:
     app.elfhosted.com/name: tautulli  
