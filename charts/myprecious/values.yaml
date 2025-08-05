@@ -13648,7 +13648,7 @@ plexdebrid: &app_plexdebrid
   #   app.elfhosted.com/name: plexdebrid
   image:
     repository: ghcr.io/elfhosted/plex-debrid
-    tag: rolling@sha256:0c0251d2aef532ba62660b719b7e37e72b4eb262ca18e21d68b9509d305e12a1
+    tag: rolling@sha256:edd194df7d8344adb4c51478ef3e33ef54f0dc0021fbe377e80ab7a77d16d15f
   podLabels:
     app.elfhosted.com/name: plex-debrid    
   podAnnotations:
