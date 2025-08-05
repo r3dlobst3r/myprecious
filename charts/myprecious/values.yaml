@@ -4906,7 +4906,7 @@ plex: &app_plex
   image:
     registry: ghcr.io
     repository: elfhosted/plex
-    tag: 1.41.9.9961-46083195d@sha256:f273e344e77e6717254c850df69dcd59968b09f8bb243236bd7afca22432f01a
+    tag: 1.41.9.9961-46083195d@sha256:496c0d1f895da954705e414023c14f196ef34ac9e45cdae3bfd7598702b67b8b
   imagePullSecrets:
   - name: ghcr-io-elfhosted      
   persistence: &app_plex_persistence
@@ -5025,7 +5025,7 @@ plex: &app_plex
       - mountPath: /tmp
         name: tmp
     dbrepair:
-      image: ghcr.io/elfhosted/plex:1.41.9.9961-46083195d@sha256:f273e344e77e6717254c850df69dcd59968b09f8bb243236bd7afca22432f01a
+      image: ghcr.io/elfhosted/plex:1.41.9.9961-46083195d@sha256:496c0d1f895da954705e414023c14f196ef34ac9e45cdae3bfd7598702b67b8b
       imagePullPolicy: IfNotPresent
       command:
       - /bin/bash
@@ -14298,7 +14298,7 @@ pulsarr: &app_pulsarr
         name: app
   additionalContainers:
     apprise-api:
-      image: ghcr.io/elfhosted/apprise-api:v1.2.0@sha256:ed6e963a2cdd1bdef63c51e82ca7b8bd2549f285f2e0510ea78d6f0adac40588
+      image: ghcr.io/elfhosted/apprise-api:v1.2.1@sha256:336e8179d04d240ea8f45053bd2288b99f42f58845afa303fc6136087f36feb7
       volumeMounts:
       - name: config
         mountPath: /config
@@ -14532,7 +14532,7 @@ debridav: &app_debridav
         seccompProfile:
           type: RuntimeDefault
     restart-with-plex:
-      image: ghcr.io/elfhosted/plex:1.41.9.9961-46083195d@sha256:f273e344e77e6717254c850df69dcd59968b09f8bb243236bd7afca22432f01a
+      image: ghcr.io/elfhosted/plex:1.41.9.9961-46083195d@sha256:496c0d1f895da954705e414023c14f196ef34ac9e45cdae3bfd7598702b67b8b
       command:
       - /bin/bash
       - -c
