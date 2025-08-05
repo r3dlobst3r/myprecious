@@ -4937,9 +4937,12 @@ plex: &app_plex
           claimName: logs
     transcode:
       enabled: true
-      type: emptyDir
-      mountPath: /transcode
-      sizeLimit: 10Gi          
+      type: custom
+      mountPath: "/transcode"
+      subPath: plex
+      volumeSpec:
+        persistentVolumeClaim:
+          claimName: transcode-50g
     phototranscoder:
       enabled: true
       mountPath: /config/Library/Application Support/Plex Media Server/Cache/PhotoTranscoder
@@ -5212,9 +5215,12 @@ jellyfin: &app_jellyfin
           claimName: logs             
     transcode:
       enabled: true
-      type: emptyDir
-      mountPath: /transcode
-      sizeLimit: 10Gi
+      type: custom
+      mountPath: "/transcode"
+      subPath: jellyfin
+      volumeSpec:
+        persistentVolumeClaim:
+          claimName: transcode-50g
     elfbot:
       enabled: "true"
       type: "custom"
@@ -5408,9 +5414,12 @@ emby: &app_emby
           claimName: logs                
     transcode:
       enabled: true
-      type: emptyDir
-      mountPath: /transcode
-      sizeLimit: 10Gi
+      type: custom
+      mountPath: "/transcode"
+      subPath: emby
+      volumeSpec:
+        persistentVolumeClaim:
+          claimName: transcode-50g
     elfbot:
       enabled: "true"
       type: "custom"
