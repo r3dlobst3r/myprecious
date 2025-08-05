@@ -11521,7 +11521,7 @@ actual:
       type: emptyDir     
   additionalContainers:
     api:
-      image: ghcr.io/elfhosted/actual-http-api:25.7.1@sha256:39a75e02129af32cb8d4b7a54c41e3e8403ba4b3cb7a9cc482ab30dd91295745
+      image: ghcr.io/elfhosted/actual-http-api:25.8.0@sha256:4c27949703ed84d119ebe935c1d8cbca5d6262dccb413d54c827db62ad4ba05c
       securityContext: *default_securitycontext
       envFrom:
       - configMapRef:
