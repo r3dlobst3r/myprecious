@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.453.0](https://github.com/elfhosted/myprecious/compare/v1.452.0...v1.453.0) (2025-08-05)
+
+
+### Features
+
+* **app:** update ghcr.io/elfhosted/apprise-api docker tag to v1.2.1 ([2b69cd5](https://github.com/elfhosted/myprecious/commit/2b69cd57a1ba0a5b7ed846d4c4229412faebf3c6))
+
+
+### Bug Fixes
+
+* **app:** update ghcr.io/elfhosted/plex:1.41.9.9961-46083195d docker digest to 496c0d1 ([0a85b2f](https://github.com/elfhosted/myprecious/commit/0a85b2f0ab6f95ad612c89292b25c0c9869a4e25))
+* syntax error in stremthru env relating to deprecated AllDebrid VPN supprot ([4794efb](https://github.com/elfhosted/myprecious/commit/4794efb70f70d40ff86c46fb787bfaafd86a744e))
+
 ## [1.452.0](https://github.com/elfhosted/myprecious/compare/v1.451.0...v1.452.0) (2025-08-05)
 
 
