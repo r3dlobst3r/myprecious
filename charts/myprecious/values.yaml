@@ -7483,7 +7483,7 @@ audiobookshelf:
   enabled: false
   image:
     repository: ghcr.io/elfhosted/audiobookshelf
-    tag: v2.26.3@sha256:5d55bc91288d7deb05d32e98b19be020c586fb872801680e7e2d220bd1a7b66d
+    tag: v2.27.0@sha256:118feb451832e435a495a353dfae29f3cdff037a3cc65cf891ce365569fe6a3a
   priorityClassName: tenant-streaming
   securityContext:
     seccompProfile:
