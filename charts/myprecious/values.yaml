@@ -10362,7 +10362,7 @@ blueskypds:
   enabled: false
   image:
     repository: ghcr.io/elfhosted/bluesky-pds
-    tag: 0.4.164@sha256:908d6ab22ad925720ce2688cf41d595946eb3e7017e13ee8e5ee7b99da89c851
+    tag: 0.4.165@sha256:4f76545a643af09eb7542fc70c0dd830b4077063b0d7d13caed9cfa71d37c5f5
   priorityClassName: tenant-normal
   podLabels:
       app.elfhosted.com/name: bluesky-pds  
