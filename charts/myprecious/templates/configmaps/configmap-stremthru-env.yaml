@@ -12,9 +12,6 @@ data:
   {{ if .Values.vpnproxy.enabled }}  
   STREMTHRU_HTTP_PROXY: http://vpnproxy:8888
   STREMTHRU_HTTPS_PROXY: http://vpnproxy:8888
-  {{ else if .Values.rclonealldebrid.enabled }}
-  STREMTHRU_HTTP_PROXY: http://alldebrid:8888
-  STREMTHRU_HTTPS_PROXY: http://alldebrid:8888
   {{ else }}
   STREMTHRU_HTTP_PROXY: http://tinyproxy.stremthru:8888
   STREMTHRU_HTTPS_PROXY: http://tinyproxy.stremthru:8888
