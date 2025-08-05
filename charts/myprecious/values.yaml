@@ -4937,9 +4937,12 @@ plex: &app_plex
           claimName: logs
     transcode:
       enabled: true
-      type: emptyDir
-      mountPath: /transcode
-      sizeLimit: 10Gi          
+      type: custom
+      mountPath: "/transcode"
+      subPath: plex
+      volumeSpec:
+        persistentVolumeClaim:
+          claimName: transcode-50g
     phototranscoder:
       enabled: true
       mountPath: /config/Library/Application Support/Plex Media Server/Cache/PhotoTranscoder
@@ -5212,9 +5215,12 @@ jellyfin: &app_jellyfin
           claimName: logs             
     transcode:
       enabled: true
-      type: emptyDir
-      mountPath: /transcode
-      sizeLimit: 10Gi
+      type: custom
+      mountPath: "/transcode"
+      subPath: jellyfin
+      volumeSpec:
+        persistentVolumeClaim:
+          claimName: transcode-50g
     elfbot:
       enabled: "true"
       type: "custom"
@@ -5345,7 +5351,12 @@ jellyfinranger:
       configmap.reloader.stakater.com/reload: "elfbot-jellyfin,elfbot-all"
   persistence:
     <<: *app_jellyfin_persistence
-    render-device: *streamer_render_device
+    # Define this since it's the first time it appears
+    render-device: &streamer_render_device
+      enabled: "true"
+      type: hostPath
+      hostPath: "/dev/dri"
+      mountPath: "/dev/dri"
 
 emby: &app_emby
   hostname: elfhosted
@@ -5408,9 +5419,12 @@ emby: &app_emby
           claimName: logs                
     transcode:
       enabled: true
-      type: emptyDir
-      mountPath: /transcode
-      sizeLimit: 10Gi
+      type: custom
+      mountPath: "/transcode"
+      subPath: emby
+      volumeSpec:
+        persistentVolumeClaim:
+          claimName: transcode-50g
     elfbot:
       enabled: "true"
       type: "custom"
@@ -6037,12 +6051,7 @@ tunarr:
         configMap:
           name: elfbot-tunarr
           optional: true
-    # This is the first time this is defined, but we use it elsewhere
-    render-device: &streamer_render_device
-      enabled: "true"
-      type: hostPath
-      hostPath: "/dev/dri"
-      mountPath: "/dev/dri"
+    render-device: *streamer_render_device
     media: # in case users use /tmp
       enabled: true
       mountPath: /streams
