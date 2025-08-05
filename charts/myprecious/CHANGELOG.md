@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.452.0](https://github.com/elfhosted/myprecious/compare/v1.451.0...v1.452.0) (2025-08-05)
+
+
+### Features
+
+* **app:** update docker.io/redis docker tag to v8 ([0e5fc65](https://github.com/elfhosted/myprecious/commit/0e5fc6569c366ae2809c983c18a9c86547b4481d))
+* **app:** update ghcr.io/actualbudget/actual-server docker tag to v25.8.0 ([0d7b2af](https://github.com/elfhosted/myprecious/commit/0d7b2afe525ef281191b91baff4dd8cc5e00fb5c))
+* **app:** update ghcr.io/elfhosted/actual-http-api docker tag to v25.8.0 ([92859db](https://github.com/elfhosted/myprecious/commit/92859db86c309717ca4528129069dbf4923bfe40))
+* **app:** update ghcr.io/elfhosted/audiobookshelf docker tag to v2.27.0 ([7afa3ed](https://github.com/elfhosted/myprecious/commit/7afa3ed0c11a6da8d8519e23fa8aa17141a38c0e))
+* **app:** update ghcr.io/elfhosted/bluesky-pds docker tag to v0.4.164 ([aeaaebd](https://github.com/elfhosted/myprecious/commit/aeaaebdebfe7e87da1ce7d0c6f69f5105b51cffb))
+* **app:** update ghcr.io/elfhosted/bluesky-pds docker tag to v0.4.165 ([9f3fa88](https://github.com/elfhosted/myprecious/commit/9f3fa883deacace5285364684aba1e419843ce9d))
+* **app:** update ghcr.io/elfhosted/calibre-web-automated docker tag to v3.1.2 ([c787aa8](https://github.com/elfhosted/myprecious/commit/c787aa82286553e72684d03c3d78b51bfd88e26e))
+* **app:** update ghcr.io/elfhosted/emby docker tag to v4.9.1.14 ([d217028](https://github.com/elfhosted/myprecious/commit/d2170281d106f16e9dba5065721d70cd00a38bd4))
+* **app:** update ghcr.io/elfhosted/gatus docker tag to v5.21.0 ([73baf5d](https://github.com/elfhosted/myprecious/commit/73baf5d089d69ed6a54a165d5fd3e71115f7ea62))
+* **app:** update ghcr.io/elfhosted/jackett docker tag to v0.22.2225 ([45d72a1](https://github.com/elfhosted/myprecious/commit/45d72a1e83a3a13d978b0206bfb453a86a936334))
+* **app:** update ghcr.io/elfhosted/jackett docker tag to v0.22.2231 ([4f1c1af](https://github.com/elfhosted/myprecious/commit/4f1c1af7e393d8d5230b3cb22d96f118d3197562))
+* **app:** update ghcr.io/elfhosted/lidarr-develop docker tag to v2.13.1.4681 ([2dfec65](https://github.com/elfhosted/myprecious/commit/2dfec652227a53ef916975ab15f7613752ac7e05))
+* **app:** update ghcr.io/elfhosted/tautulli docker tag to v2.15.3 ([6642723](https://github.com/elfhosted/myprecious/commit/6642723c9a6512b6e49bebcedf3a6a643ceb5aec))
+* **app:** update ghcr.io/elfhosted/webstreamr docker tag to v0.41.1 ([57a9900](https://github.com/elfhosted/myprecious/commit/57a9900410d7f85216a0fffdd85c7e784cbbb55a))
+* **app:** update ghcr.io/elfhosted/webstreamr docker tag to v0.41.2 ([fa49245](https://github.com/elfhosted/myprecious/commit/fa49245d2c8fdc07a4a6ee49587d34a160ae7aba))
+* **app:** update ghcr.io/gethomepage/homepage docker tag to v1.4.3 ([009bf9d](https://github.com/elfhosted/myprecious/commit/009bf9dcc9c417a9db2d204cb3663192e00393cd))
+* **app:** update privatebin/fs docker tag to v2 ([e919c27](https://github.com/elfhosted/myprecious/commit/e919c275351dfeebcba6608a624864e8cfd1ec6f))
+
+
+### Bug Fixes
+
+* **app:** update docker.io/redis:8.2-alpine docker digest to 372dbfd ([4d74af3](https://github.com/elfhosted/myprecious/commit/4d74af34a832da4799781bc2729ed029f6a3ef83))
+* **app:** update ghcr.io/elfhosted/plex-debrid:rolling docker digest to edd194d ([35f9d2b](https://github.com/elfhosted/myprecious/commit/35f9d2bd6af2362e66f8abb8cff4671a1b5413ae))
+* **app:** update ghcr.io/elfhosted/radarr:5.26.2.10099 docker digest to 0d67871 ([0513752](https://github.com/elfhosted/myprecious/commit/05137520e127f4fbb29df5d2fb0e12c9e931efd6))
+* **app:** update ghcr.io/elfhosted/sonarr:4.0.15.2941 docker digest to e2a8e49 ([3501a54](https://github.com/elfhosted/myprecious/commit/3501a54f6ce1bab27b9cdb3173994e3eabb87684))
+* Fix for updated Wizarr invitation path (shouldn't need SSO) ([043ed7a](https://github.com/elfhosted/myprecious/commit/043ed7af06e410245152fe5bbdd3071505fd76e8))
+* Refactor plex transcoding mount ([a474c54](https://github.com/elfhosted/myprecious/commit/a474c54d1809eddefe4fc6f25beacfc2ea6e1e07))
+
 ## [1.451.0](https://github.com/elfhosted/myprecious/compare/v1.450.0...v1.451.0) (2025-08-04)
 
 
