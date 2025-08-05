@@ -4937,12 +4937,9 @@ plex: &app_plex
           claimName: logs
     transcode:
       enabled: true
-      type: custom
+      type: emptyDir
       mountPath: /transcode
-      subPath: plex
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-1g    
+      sizeLimit: 10Gi          
     phototranscoder:
       enabled: true
       mountPath: /config/Library/Application Support/Plex Media Server/Cache/PhotoTranscoder
@@ -4955,11 +4952,6 @@ plex: &app_plex
         configMap:
           name: elfbot-plex
           optional: true
-    render-device: &streamer_render_device
-      enabled: "true"
-      type: hostPath
-      hostPath: "/dev/dri"
-      mountPath: "/dev/dri"
     shared:
       enabled: true
       mountPath: /shared
@@ -5220,12 +5212,9 @@ jellyfin: &app_jellyfin
           claimName: logs             
     transcode:
       enabled: true
-      type: custom
+      type: emptyDir
       mountPath: /transcode
-      subPath: jellyfin
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-1g  
+      sizeLimit: 10Gi
     elfbot:
       enabled: "true"
       type: "custom"
@@ -5233,7 +5222,6 @@ jellyfin: &app_jellyfin
         configMap:
           name: elfbot-jellyfin
           optional: true
-    render-device: *streamer_render_device
     tooling-scripts:
       enabled: "true"
       type: "custom"
@@ -5357,14 +5345,7 @@ jellyfinranger:
       configmap.reloader.stakater.com/reload: "elfbot-jellyfin,elfbot-all"
   persistence:
     <<: *app_jellyfin_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: jellyfin
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device
 
 emby: &app_emby
   hostname: elfhosted
@@ -5427,12 +5408,9 @@ emby: &app_emby
           claimName: logs                
     transcode:
       enabled: true
-      type: custom
+      type: emptyDir
       mountPath: /transcode
-      subPath: emby
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-1g  
+      sizeLimit: 10Gi
     elfbot:
       enabled: "true"
       type: "custom"
@@ -5440,7 +5418,6 @@ emby: &app_emby
         configMap:
           name: elfbot-emby
           optional: true
-    render-device: *streamer_render_device
     tooling-scripts:
       enabled: "true"
       type: "custom"
@@ -5552,14 +5529,7 @@ embyranger:
       configmap.reloader.stakater.com/reload: "elfbot-emby,elfbot-all"
   persistence:
     <<: *app_emby_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: emby
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device
 
 homer:
   priorityClassName: tenant-normal
@@ -6067,7 +6037,12 @@ tunarr:
         configMap:
           name: elfbot-tunarr
           optional: true
-    render-device: *streamer_render_device
+    # This is the first time this is defined, but we use it elsewhere
+    render-device: &streamer_render_device
+      enabled: "true"
+      type: hostPath
+      hostPath: "/dev/dri"
+      mountPath: "/dev/dri"
     media: # in case users use /tmp
       enabled: true
       mountPath: /streams
@@ -15206,14 +15181,7 @@ plexhobbit:
   resources: *hobbit_streamer_resources
   persistence:
     <<: *app_plex_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: plex
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device
 
 jellyfinhobbit:
   <<: *app_jellyfin
@@ -15225,14 +15193,7 @@ jellyfinhobbit:
   resources: *hobbit_streamer_resources
   persistence:
     <<: *app_jellyfin_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: jellyfin
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device
 
 embyhobbit:
   <<: *app_emby
@@ -15244,27 +15205,14 @@ embyhobbit:
   resources: *hobbit_streamer_resources
   persistence:
     <<: *app_emby_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: emby
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device
 
 plexranger:
   <<: *app_plex
   persistence:
     <<: *app_plex_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: plex
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g
+    render-device: *streamer_render_device
+
   podAnnotations: 
     <<: *ranger_streamer_podAnnotations
     elfbot.elfhosted.com/icon: "https://icons.elfhosted.com/plex.png"
@@ -15276,14 +15224,7 @@ plexhalfling:
   <<: *app_plex
   persistence:
     <<: *app_plex_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: plex
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device 
   podAnnotations: 
     <<: *halfling_streamer_podAnnotations
     elfbot.elfhosted.com/icon: "https://icons.elfhosted.com/plex.png"
@@ -15301,14 +15242,7 @@ jellyfinhalfling:
   resources: *halfling_streamer_resources
   persistence:
     <<: *app_jellyfin_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: jellygfin
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device
 
 embyhalfling:
   <<: *app_emby
@@ -15320,31 +15254,19 @@ embyhalfling:
   resources: *halfling_streamer_resources
   persistence:
     <<: *app_emby_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: emby
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device
 
 plexnazgul:
+  hostname: plexnazgul
   <<: *app_plex
   persistence:
     <<: *app_plex_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: plex
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device 
   podAnnotations: *nazgul_streamer_podAnnotations
   resources: *nazgul_streamer_resources
 
 jellyfinnazgul:
+  hostname: jellyfinnazgul
   <<: *app_jellyfin
   podAnnotations: 
     <<: *nazgul_streamer_podAnnotations
@@ -15354,17 +15276,11 @@ jellyfinnazgul:
   resources: *nazgul_streamer_resources
   persistence:
     <<: *app_jellyfin_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: jellyfin
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device 
 
 embynazgul:
   <<: *app_emby
+  hostname: embynazgul
   podAnnotations: 
     <<: *nazgul_streamer_podAnnotations
     elfbot.elfhosted.com/name: "Emby"
@@ -15373,19 +15289,11 @@ embynazgul:
   resources: *nazgul_streamer_resources
   persistence:
     <<: *app_emby_persistence
-    transcode:
-      enabled: true
-      type: custom
-      mountPath: /transcode
-      subPath: emby
-      volumeSpec:
-        persistentVolumeClaim:
-          claimName: transcode-50g  
+    render-device: *streamer_render_device
 
 # We use these to set aside resources for dedicated bundles
 streamer: &app_resource_reserver
   enabled: false
-  priorityClassName: tenant-low # allow kubernetes to evict these pods first
   image:
     repository: ghcr.io/elfhosted/tooling
     tag: focal-20240530@sha256:458d1f3b54e9455b5cdad3c341d6853a6fdd75ac3f1120931ca3c09ac4b588de
