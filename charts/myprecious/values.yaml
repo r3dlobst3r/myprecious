@@ -14283,7 +14283,7 @@ pulsarr: &app_pulsarr
         name: app
   additionalContainers:
     apprise-api:
-      image: ghcr.io/elfhosted/apprise-api:v1.2.0@sha256:ed6e963a2cdd1bdef63c51e82ca7b8bd2549f285f2e0510ea78d6f0adac40588
+      image: ghcr.io/elfhosted/apprise-api:v1.2.1@sha256:336e8179d04d240ea8f45053bd2288b99f42f58845afa303fc6136087f36feb7
       volumeMounts:
       - name: config
         mountPath: /config
