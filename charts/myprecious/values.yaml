@@ -4961,6 +4961,11 @@ plex: &app_plex
       type: emptyDir
       volumeSpec:
         medium: Memory     
+    # No transcoding by default
+    render-device:
+      enabled: true
+      mountPath: /dev/dri
+      type: emptyDir     
   ingress:
     main:
       enabled: false
@@ -5235,6 +5240,11 @@ jellyfin: &app_jellyfin
         configMap:
           name: tooling-scripts
           defaultMode: 0755
+    # No transcoding by default
+    render-device:
+      enabled: true
+      mountPath: /dev/dri
+      type: emptyDir          
   initContainers:
     restart-with-zurg:
       image: ghcr.io/elfhosted/zurg-rc:2025.07.29.0047-nightly@sha256:1a42b75a1758065b7250033758a4c957dece6510d5345e3a21255adc6ce805f7
@@ -5439,6 +5449,11 @@ emby: &app_emby
         configMap:
           name: tooling-scripts
           defaultMode: 0755
+    # No transcoding by default
+    render-device:
+      enabled: true
+      mountPath: /dev/dri
+      type: emptyDir              
   initContainers:
     restart-with-zurg:
       image: ghcr.io/elfhosted/zurg-rc:2025.07.29.0047-nightly@sha256:1a42b75a1758065b7250033758a4c957dece6510d5345e3a21255adc6ce805f7
