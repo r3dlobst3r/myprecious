@@ -1,4 +1,4 @@
-{{ if or .Values.plex.enabled .Values.plexhobbit.enabled .Values.plexranger.enabled .Values.plexhalfling.enabled .Values.plexnazgul.enabled .Values.emby.enabled .Values.embyhobbit.enabled .Values.embyranger.enabled .Values.embyhalfling.enabled .Values.embynazgul.enabled .Values.jellyfin.enabled .Values.jellyhobbit.enabled .Values.jellyfinranger.enabled .Values.jellyfinhalfling.enabled .Values.jellyfinnazgul.enabled }}
+{{ if or .Values.plex.enabled .Values.plexhobbit.enabled .Values.plexranger.enabled .Values.plexhalfling.enabled .Values.plexnazgul.enabled .Values.emby.enabled .Values.embyhobbit.enabled .Values.embyranger.enabled .Values.embyhalfling.enabled .Values.embynazgul.enabled .Values.jellyfin.enabled .Values.jellyfinhobbit.enabled .Values.jellyfinranger.enabled .Values.jellyfinhalfling.enabled .Values.jellyfinnazgul.enabled }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
