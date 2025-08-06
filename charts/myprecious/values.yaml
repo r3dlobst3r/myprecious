@@ -5368,7 +5368,7 @@ emby: &app_emby
   image:
     registry: ghcr.io
     repository: elfhosted/emby
-    tag: 4.9.1.14@sha256:0ac1cefb8771588431f49828b5bb32f7e043107ab514f3267b513b4971e9d87d
+    tag: 4.9.1.16@sha256:4c542d7d14f061f6970940ad976e7cad7389b0866677a4a50d733ce478c621bb
   imagePullSecrets:
   - name: ghcr-io-elfhosted    
   enabled: false
@@ -14541,7 +14541,7 @@ debridav: &app_debridav
       - |
         echo "This pod only exists to cause a restart when jellyfin is updated"  
     restart-with-emby:
-      image: ghcr.io/elfhosted/emby:4.9.1.14@sha256:0ac1cefb8771588431f49828b5bb32f7e043107ab514f3267b513b4971e9d87d
+      image: ghcr.io/elfhosted/emby:4.9.1.16@sha256:4c542d7d14f061f6970940ad976e7cad7389b0866677a4a50d733ce478c621bb
       command:
       - /bin/bash
       - -c
