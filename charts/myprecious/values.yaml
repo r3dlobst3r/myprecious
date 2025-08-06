@@ -4888,7 +4888,7 @@ plex: &app_plex
   securityContext:
     runAsUser: 568
     runAsGroup: 568
-    privileged: true
+    privileged: false
   podSecurityContext:
     fsGroup: 568
     runAsUser: 568
@@ -4960,12 +4960,8 @@ plex: &app_plex
       mountPath: /shared
       type: emptyDir
       volumeSpec:
-        medium: Memory     
-    # No transcoding by default
-    render-device:
-      enabled: true
-      mountPath: /dev/dri
-      type: emptyDir     
+        medium: Memory
+    render-device: *streamer_render_device
   ingress:
     main:
       enabled: false
@@ -15197,15 +15193,16 @@ elfassesment:
 
 plexhobbit:
   <<: *app_plex
+  securityContext:
+    runAsUser: 568
+    runAsGroup: 568
+    privileged: true  
   podAnnotations: 
     <<: *hobbit_streamer_podAnnotations
     elfbot.elfhosted.com/icon: "https://icons.elfhosted.com/plex.png"
     elfbot.elfhosted.com/name: "Plex"
     elfbot.elfhosted.com/category: Consume Media
   resources: *hobbit_streamer_resources
-  persistence:
-    <<: *app_plex_persistence
-    render-device: *streamer_render_device
 
 jellyfinhobbit:
   <<: *app_jellyfin
@@ -15233,10 +15230,10 @@ embyhobbit:
 
 plexranger:
   <<: *app_plex
-  persistence:
-    <<: *app_plex_persistence
-    render-device: *streamer_render_device
-
+  securityContext:
+    runAsUser: 568
+    runAsGroup: 568
+    privileged: true  
   podAnnotations: 
     <<: *ranger_streamer_podAnnotations
     elfbot.elfhosted.com/icon: "https://icons.elfhosted.com/plex.png"
@@ -15246,9 +15243,10 @@ plexranger:
 
 plexhalfling:
   <<: *app_plex
-  persistence:
-    <<: *app_plex_persistence
-    render-device: *streamer_render_device 
+  securityContext:
+    runAsUser: 568
+    runAsGroup: 568
+    privileged: true  
   podAnnotations: 
     <<: *halfling_streamer_podAnnotations
     elfbot.elfhosted.com/icon: "https://icons.elfhosted.com/plex.png"
@@ -15283,9 +15281,10 @@ embyhalfling:
 plexnazgul:
   hostname: plexnazgul
   <<: *app_plex
-  persistence:
-    <<: *app_plex_persistence
-    render-device: *streamer_render_device 
+  securityContext:
+    runAsUser: 568
+    runAsGroup: 568
+    privileged: true  
   podAnnotations: *nazgul_streamer_podAnnotations
   resources: *nazgul_streamer_resources
 
