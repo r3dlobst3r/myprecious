@@ -13134,7 +13134,7 @@ webstreamr:
   enabled: false
   image:
     repository: ghcr.io/elfhosted/webstreamr
-    tag: v0.41.2@sha256:c50d1e07166f8a1d17b3ed60adab7d944b061929f089019587fe42017814a18d
+    tag: v0.41.3@sha256:16d645a4e07864c31f18f5c613fc3548195b1d88191508d785cc1907d4ff4b68
   priorityClassName: tenant-normal
   podLabels:
     app.elfhosted.com/name: webstreamr  
