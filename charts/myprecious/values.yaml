@@ -7433,7 +7433,7 @@ peertube:
           cpu: 500m
           memory: 1Gi
     redis:
-      image: docker.io/redis:8.2-alpine@sha256:372dbfde9208182552a4048b7a110757c1a3bbe8f396bcb729d2d59260fd80c0
+      image: docker.io/redis:8.2-alpine@sha256:7521abdff715d396aa482183942f3fe643344287c29ccb66eee16ac08a92190f
       resources:
         requests:
           cpu: 15m
@@ -14896,7 +14896,7 @@ wger:
           cpu: 500m
           memory: 4Gi
     redis:
-      image: docker.io/redis:8.2-alpine@sha256:372dbfde9208182552a4048b7a110757c1a3bbe8f396bcb729d2d59260fd80c0
+      image: docker.io/redis:8.2-alpine@sha256:7521abdff715d396aa482183942f3fe643344287c29ccb66eee16ac08a92190f
       envFrom:
       - configMapRef:
           name: wger-env
@@ -15094,7 +15094,7 @@ immich:
           cpu: 500m
           memory: 4Gi
     redis:
-      image: docker.io/redis:8.2-alpine@sha256:372dbfde9208182552a4048b7a110757c1a3bbe8f396bcb729d2d59260fd80c0
+      image: docker.io/redis:8.2-alpine@sha256:7521abdff715d396aa482183942f3fe643344287c29ccb66eee16ac08a92190f
       envFrom:
       - configMapRef:
           name: immich-env
