@@ -10491,7 +10491,7 @@ riven: &app_riven
     elfbot.elfhosted.com/category: Manage Downloads  
   image:
     repository: ghcr.io/elfhosted/riven
-    tag: v0.21.21@sha256:bf1a9cab579d5eaac0ed72e20584b139547db7c38753a03b3756151af5e0ac13
+    tag: v0.22.0@sha256:99cdcfa66d0d73b32e139718f8d5ad6ae48b16a3554303be3aaa690e7093e69e
   priorityClassName: tenant-normal
   controller:
     annotations:
