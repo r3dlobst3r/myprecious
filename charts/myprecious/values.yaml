@@ -12164,7 +12164,7 @@ stremthru:
   enabled: false
   image:
     repository: ghcr.io/elfhosted/stremthru
-    tag: 0.82.0@sha256:39dd61b7773ea50fbfa7a3fc59490143a3d3c1a7f64c717201f520a8fd556a15
+    tag: 0.83.0@sha256:5f6c1eb4394c0184cd3d33f0a1422c44beb2f936ff8fee1426bd8bf65a37048f
   priorityClassName: tenant-normal
   podLabels:
       app.elfhosted.com/name: stremthru  
