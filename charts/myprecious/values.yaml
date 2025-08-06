@@ -4961,7 +4961,11 @@ plex: &app_plex
       type: emptyDir
       volumeSpec:
         medium: Memory
-    render-device: *streamer_render_device
+    render-device: &streamer_render_device
+      enabled: "true"
+      type: hostPath
+      hostPath: "/dev/dri"
+      mountPath: "/dev/dri"
   ingress:
     main:
       enabled: false
@@ -5357,12 +5361,7 @@ jellyfinranger:
       configmap.reloader.stakater.com/reload: "elfbot-jellyfin,elfbot-all"
   persistence:
     <<: *app_jellyfin_persistence
-    # Define this since it's the first time it appears
-    render-device: &streamer_render_device
-      enabled: "true"
-      type: hostPath
-      hostPath: "/dev/dri"
-      mountPath: "/dev/dri"
+    render-device: *streamer_render_device
 
 emby: &app_emby
   hostname: elfhosted
